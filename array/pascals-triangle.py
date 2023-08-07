@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
 
     # Đề bài yêu cầu tính tổng của các phần tử trong hàng hiện tại dựa vào giá trị hàng trên nó

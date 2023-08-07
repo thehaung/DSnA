@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
 
     # Đề bài yêu cầu từ mảng đã cho tính
@@ -25,3 +27,6 @@ class Solution:
     # Note -> Nếu như theo đề bài Follow up: Can you solve the problem in O(1) 
     # extra space complexity? (The output array does not count as extra space for space complexity analysis.)
     # Thì Space Complexity của bài này là O(1)
+
+instance = Solution()
+print(instance.productExceptSelf([1, 2, 3, 4]))

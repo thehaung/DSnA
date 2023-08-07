@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     
     # Đề bài yêu cầu +1 giá trị vào phần tử cuối trong mảng

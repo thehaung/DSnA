@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
 
     # Đề bài yêu cầu dịch chuyển các phần tử có value khác val về đầu của mảng
@@ -17,3 +19,6 @@ class Solution:
     
     # Time Complexity: O(N)
     # Space Complexity: O(1)
+
+instance = Solution()
+print(instance.removeElement([1, 2, 2, 1], 1))
