@@ -12,12 +12,7 @@ class Solution:
 
         s_dict = Solution().loadDictornary(s)
         t_dict = Solution().loadDictornary(t)
-
-        for key, value in t_dict.items():
-            if key not in s_dict or s_dict[key] != value:
-                return False
-
-        return True
+        return s_dict == t_dict
 
     @lru_cache(None)
     def loadDictornary(self, s: str) -> dict:
