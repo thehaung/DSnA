@@ -2,7 +2,8 @@ from collections import deque
 
 
 class MyCircularQueue:
-
+    # Đề bài yêu cầu implement Circular Queue với base performed FIFO (Queue)
+    # Ý tưởng dùng deque trong Py collections để implement
     def __init__(self, k: int):
         self.queue = deque()
         self.capacity = k
