@@ -14,3 +14,5 @@ class Solution:
                     ans[i] = nums2[j]
                     break
         return ans
+    # Time Complexity: O(N^2)
+    # Space Complexity: O(N)

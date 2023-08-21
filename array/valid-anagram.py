@@ -9,13 +9,22 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
+        return self.v1(s, t)
 
-        s_dict = Solution().loadDictornary(s)
-        t_dict = Solution().loadDictornary(t)
+    def v2(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+    # Time Complexity: O(N * logN)
+    # Space Complexity: O(N)
+
+    def v1(self, s: str, t: str) -> bool:
+        s_dict = self.strDictornary(s)
+        t_dict = self.strDictornary(t)
         return s_dict == t_dict
+    # Time Complexity: O(N)
+    # Space Complexity: O(N)
 
     @lru_cache(None)
-    def loadDictornary(self, s: str) -> dict:
+    def strDictornary(self, s: str) -> dict:
         str_dict = dict()
         for element in s:
             if element in str_dict:
@@ -24,10 +33,5 @@ class Solution:
                 str_dict[element] = 1
 
         return str_dict
-
     # Time Complexity: O(N)
     # Space Complexity: O(N)
-
-
-instance = Solution()
-print(instance.isAnagram("rat", "car"))
