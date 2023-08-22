@@ -1,43 +1,31 @@
-from functools import lru_cache
 from typing import List
 
 
 class Solution:
+    """
+        Đề bài yêu cầu xác định length của dãy số liên tiếp lớn nhất
+        Ý tưởng: Lưu list num vào trong 1 set để đảm bảo unique
+        Sau đó nếu num - 1 không nằm trong numSet thì num hiện tại là head
+        Nếu longest đang kiểm tra đã lớn hơn nums.length / 2
+        Thì đây là length lớn nhất
+    """
+
     def longestConsecutive(self, nums: List[int]) -> int:
         if len(nums) == 0:
             return 0
-        sortedNums = sorted(nums)
-        print(sortedNums)
-        longestNegative = self.v1(tuple(sortedNums), True)
-        longestPositive = self.v1(tuple(sortedNums))
-
-        if longestNegative > longestPositive:
-            return longestNegative
-        return longestPositive
-
-    @lru_cache(None)
-    def v1(self, sortedNumsTuple: tuple, isNegative: bool = False) -> int:
-        cursor = 0
-        longest = 0
-        tmp = 1
-        for i in range(1, len(sortedNumsTuple)):
-            # if isNegative and sortedNumsTuple[i] > 0:
-            #     continue
-            # if isNegative is False and sortedNumsTuple[i] < 0:
-            #     continue
-            if sortedNumsTuple[i] > sortedNumsTuple[cursor] + 1:
-                if tmp > longest:
-                    longest = tmp
-                    tmp = 1
-            elif sortedNumsTuple[i] == sortedNumsTuple[cursor] + 1:
-                tmp += 1
-            cursor = i
-        if tmp > longest:
-            longest = tmp
+        numSet = set(nums)
+        longest = 1
+        for _, num in enumerate(nums):
+            if num - 1 not in numSet:
+                count = 1
+                # logN time execution
+                while num + 1 in numSet:
+                    num += 1
+                    count += 1
+                longest = max(longest, count)
+            if longest > len(nums) / 2:
+                break
         return longest
 
-
-print(Solution().longestConsecutive(
-    [1, -8, 7, -2, -4, -4, 6, 3, -4, 0, -7, -1, 5, 1, -9, -3]
-
-))
+    # Time Complexity: O(NlogN)
+    # Space Complexiy: O(N)
