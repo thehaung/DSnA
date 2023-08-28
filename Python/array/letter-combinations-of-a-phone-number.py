@@ -3,6 +3,8 @@ from typing import List
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
+        if len(digits) == 0:
+            return []
         ans = []
         digitsMapping = {
             "2": "abc",
@@ -14,28 +16,16 @@ class Solution:
             "8": "tuv",
             "9": "wxyz"
         }
+        ans.append("")
         for i in range(len(digits)):
-            for char in digitsMapping[digits[i]]:
-                ans.append(char)
-
-        for i in range(len(ans)):
-            for j in range(1, len(ans)):
-                if i != j:
-                    ans[i] = ans[i] + ans[j]
-                    break
+            idx = digits[i]
+            print(idx)
+            while ans[0] and len(ans[0]) == i:
+                t = ans.pop(0)
+                for s in digitsMapping[idx]:
+                    ans.append(t + s)
 
         return ans
 
 
 print(Solution().letterCombinations("23"))
-
-
-def test():
-    tes1 = ['a', 'b', 'c', 'd', 'e', 'f']
-    for i in range(len(tes1)):
-        tes1[i] = tes1[i] + '1'
-
-    print(tes1)
-
-
-# print(test())
