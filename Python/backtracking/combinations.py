@@ -7,17 +7,14 @@ class Solution:
         current_solution = []
 
         def backtrack(remain: int, nex: int):
-            # solution found
+            # base case
             if remain == 0:
                 ans.append(current_solution.copy())
             else:
                 # iterate through all possible candidates
                 for i in range(nex, n + 1):
-                    # add candidate
                     current_solution.append(i)
-                    # backtrack
                     backtrack(remain - 1, i + 1)
-                    # remove candidate
                     current_solution.pop()
 
         backtrack(k, 1)

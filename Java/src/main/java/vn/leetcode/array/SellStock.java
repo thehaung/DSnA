@@ -21,6 +21,6 @@ public class SellStock {
 
     public static void main(String[] args) {
         SellStock sellStock = new SellStock();
-        System.out.println(sellStock.calcProfit(Stream.of(1, 2, 2, 3, 6).mapToInt(Integer::intValue).toArray()));
+        System.out.println(sellStock.calcProfit(Stream.of(2, 2, 1, 3, 2).mapToInt(Integer::intValue).toArray()));
     }
 }

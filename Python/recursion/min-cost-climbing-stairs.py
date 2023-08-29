@@ -8,7 +8,7 @@ class Solution:
 
     def v1Recursion(self, cost: List[int]) -> int:
         @lru_cache(None)
-        def calcCost(index: int):
+        def calcCost(index: int) -> int:
             if index >= len(cost):
                 return 0
             take1Step = calcCost(index + 1)
