@@ -19,7 +19,6 @@ class Solution:
         ans.append("")
         for i in range(len(digits)):
             idx = digits[i]
-            print(idx)
             while ans[0] and len(ans[0]) == i:
                 t = ans.pop(0)
                 for s in digitsMapping[idx]:

@@ -9,10 +9,9 @@ class Solution:
         nums_dict = dict()
         for i in range(len(nums)):
             diff = target - nums[i]
-            if (diff) in nums_dict:
+            if diff in nums_dict:
                 return [nums_dict[diff], i]
             else:
                 nums_dict[nums[i]] = i
-
     # Time Complexity: O(N)
     # Space Complexity: O(N)
