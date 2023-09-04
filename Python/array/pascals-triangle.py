@@ -24,6 +24,5 @@ class Solution:
             pascals_triangle.append(curr_row)
 
         return pascals_triangle
-
     # Time Complexity: O(N^2)
     # Space Complexity: O(N)

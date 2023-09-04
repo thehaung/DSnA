@@ -12,11 +12,9 @@ class Solution:
             if digits[i] < 9:
                 digits[i] += 1
                 return digits
-
             digits[i] = 0
 
         digits.insert(0, 1)
         return digits
-
     # Time Complexity: O(N)
     # Space Complexity: O(1)

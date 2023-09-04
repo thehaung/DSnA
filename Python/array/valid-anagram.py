@@ -17,14 +17,14 @@ class Solution:
     # Space Complexity: O(N)
 
     def v1(self, s: str, t: str) -> bool:
-        s_dict = self.strDictornary(s)
-        t_dict = self.strDictornary(t)
+        s_dict = self.strDictionary(s)
+        t_dict = self.strDictionary(t)
         return s_dict == t_dict
     # Time Complexity: O(N)
     # Space Complexity: O(N)
 
     @lru_cache(None)
-    def strDictornary(self, s: str) -> dict:
+    def strDictionary(self, s: str) -> dict:
         str_dict = dict()
         for element in s:
             if element in str_dict:

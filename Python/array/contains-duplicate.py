@@ -13,7 +13,6 @@ class Solution:
                 return True
             nums_set.add(nums[i])
         return False
-
     # Time Complexity: O(N)
     # Space Complexity: O(N)
 

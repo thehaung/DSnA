@@ -22,7 +22,6 @@ class Solution:
             postfix *= nums[i]
 
         return ans
-
     # Time Complexity: O(N)
     # Space Complexity: O(N)
     # Note -> Nếu như theo đề bài Follow up: Can you solve the problem in O(1)

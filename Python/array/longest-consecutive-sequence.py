@@ -15,7 +15,7 @@ class Solution:
             return 0
         numSet = set(nums)
         longest = 1
-        for _, num in enumerate(nums):
+        for num in nums:
             if num - 1 not in numSet:
                 count = 1
                 # logN time execution
@@ -26,6 +26,5 @@ class Solution:
             if longest > len(nums) / 2:
                 break
         return longest
-
     # Time Complexity: O(NlogN)
     # Space Complexity: O(N)

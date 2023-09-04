@@ -13,5 +13,5 @@ class Solution:
             anagram_map[sorted_word].append(word)
 
         return list(anagram_map.values())
-    # Time Complexity: O(N * NlogN) -> N * logN for sorted function
+    # Time Complexity: O(NlogN) -> N * logN for sorted function
     # Space Complexity: O(N)
