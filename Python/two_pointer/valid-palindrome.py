@@ -15,7 +15,6 @@ class Solution:
             left += not leftStr.isalnum()
             right -= not rightStr.isalnum()
         return True
-
     # Time Complexity: O(N)
     # Space Complexity: O(1)
 
