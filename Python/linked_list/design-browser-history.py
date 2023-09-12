@@ -22,7 +22,7 @@ class BrowserHistory:
     def back(self, steps: int) -> str:
         # Back về prev theo số step
         # Nếu hết step thì chứng tỏ nằm ở root, trả về homepage
-        while (steps and self.root.prev):
+        while steps and self.root.prev:
             self.root = self.root.prev
             steps -= 1
         return self.root.val
@@ -33,7 +33,7 @@ class BrowserHistory:
         # Forward tới next theo số step
         # Nếu hết step thì chứng tỏ dừng ở vị trí cuối của node
         # Trả về giá trị node đó
-        while (steps and self.root.next):
+        while steps and self.root.next:
             self.root = self.root.next
             steps -= 1
         return self.root.val
