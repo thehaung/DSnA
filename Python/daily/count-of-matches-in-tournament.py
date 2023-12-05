@@ -43,6 +43,3 @@ class Solution:
                 matches += (n - 1) // 2
                 n = (n + 1) // 2
         return matches
-
-
-d
