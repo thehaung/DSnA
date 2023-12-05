@@ -20,7 +20,10 @@ public class SellStock {
     }
 
     public static void main(String[] args) {
-        SellStock sellStock = new SellStock();
-        System.out.println(sellStock.calcProfit(Stream.of(2, 2, 1, 3, 2).mapToInt(Integer::intValue).toArray()));
+        Integer nums = 10;
+        String valueStr = String.valueOf(nums);
+
+
+
     }
 }
